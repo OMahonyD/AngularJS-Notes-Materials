@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Scope and Controller</title>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+	<script type="text/javascript">
+	
+	var app = angular.module("sample", []);
+	app.controller('emp', ["$scope", function(c){
+		c.name = "Daniel";
+		c.age = 34;
+	}]);
+	
+	
+	</script>
+</head>
+
+<body ng-app="sample" ng-controller="emp">
+	{{name}} is {{age}} years old.
+</body>
+</html>
