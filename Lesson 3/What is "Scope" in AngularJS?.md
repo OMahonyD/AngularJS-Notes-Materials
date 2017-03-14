@@ -24,3 +24,7 @@
     * changes the element value in the console but not in the actual view
   * In order to propagate the entire scope object back to the View you need to call:
     * angular.element($0).scope().$digest()
+
+## Using Angular 'scope' - different syntaxes
+
+* Different approaches - refer to video for examples. At the moment, use $scope
