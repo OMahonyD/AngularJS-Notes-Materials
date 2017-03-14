@@ -9,15 +9,32 @@
 	
 	var app = angular.module("sample", []);
 	app.controller('emp', ["$scope", function(c){
-		c.name = "Daniel";
-		c.age = 34;
+		c.name = "Jag";
+		c.sal = 7000;
+		c.getAnnualSal = function(sal){
+			return (this.sal) * 12;
+		}
 	}]);
+	
+	app.controller('customerInfo', ["$scope", function(a){
+		a.name = "Jag";
+		a.city = "Vienna";
+	}])
 	
 	
 	</script>
 </head>
 
-<body ng-app="sample" ng-controller="emp">
-	{{name}} is {{age}} years old.
+<body ng-app="sample">
+	<div ng-controller="emp">
+	
+	<p>Hello {{name}}, it looks like you earn €{{sal}} each month and €{{getAnnualSal()}} for the year.</p>
+	</div>
+	
+	<div ng-controller="customerInfo">
+		<p>Hello Customer {{name}}. You are living in {{city}}</p>
+	</div>
+	
+
 </body>
 </html>
