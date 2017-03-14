@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Making AngularJS Available on Webpage</title>
+	<!-- 1. REFER / DOWNLOAD ANGULAR -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+	<script type="text/javascript">
+	<!-- 2. CREATE MODULE -->
+	angular.module("sample", []);
+	</script>
+</head>
+<!-- 3. REFERENCE MODULE ON HTML ELEMENT -->
+<body ng-app="sample">
+<p>The sum of the numbers (10 + 20) is: {{10+20}}</p>
+</body>
+
+</html>
