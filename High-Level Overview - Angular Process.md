@@ -6,4 +6,10 @@
     * 'ng-*' attributes (directives)
     * Evaluating expressions
     * data-binding markup etc.
-    
+* Processes template:
+  * Compiles template (for errors)
+  * Loads template (instance) in memory
+  * Transforms template with data
+    * data binding
+    * Evaluation of expressions
+* Renders to DOM tree (View)
