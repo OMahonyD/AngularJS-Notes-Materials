@@ -14,3 +14,13 @@
 
 * $scope referenced as a parameter within the controller function
 * $scope.Name  = "Jag" >> used as {{Name}} within view.
+
+### Dev Tools
+
+* AngularJS adds ng-scope and ng-binding
+* Debugging in console - angular.element($0).scope()
+* Modifying from the console:
+  * angular.element($0).scope().name
+    * changes the element value in the console but not in the actual view
+  * In order to propagate the entire scope object back to the View you need to call:
+    * angular.element($0).scope().$digest()
