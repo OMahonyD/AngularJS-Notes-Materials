@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Introducing the Controller</title>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+	<script type="text/javascript">
+	
+	var app = angular.module("sample", []);
+	
+	app.controller('emp', function(){
+		this.name = 'Jag';
+		this.sal = 4500;
+	});
+	</script>
+</head>
+
+<body ng-app="sample">
+	<div ng-controller="emp as o">
+		Hello {{o.name}}, I see you won €{{o.sal}} in the lottery!
+	</div>
+</body>
+</html>
