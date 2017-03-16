@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Scope Inheritance</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+	<script type="text/javascript">
+		var sample = angular.module('sample', []).run(['$rootScope', function($rootScope){
+			$rootScope.TaxPercent = 20;
+		}]);
+		
+		;
+		
+		sample.controller('emp', ['$scope', function($scope){
+			$scope.Name = 'Jag';
+		}]);//end emp
+		
+		sample.controller('empDetails', ['$scope', function($scope){
+			$scope.Salary = 5400;
+			$scope.Dept = 'Sales';
+		}]);//end empDetails
+		
+		sample.controller('empPaycheck', ['$scope', '$rootScope', function($scope, $rootScope){
+			$scope.getTaxes = function(){
+				return $scope.Salary * $rootScope.TaxPercent/100;
+			};//end getTaxes()
+			
+			$scope.getNet = function(){
+				return $scope.Salary - $scope.getTaxes();
+			};//end getNet()
+		}]);//end empPaycheck
+		
+		
+	</script>
+
+<body ng-app="sample">
+	<div ng-controller="emp">
+		<p>Employee details of <strong>{{Name}}</strong>:</p>
+		
+		<div ng-controller="empDetails">
+			<p>{{Name}} works in the {{Dept}} department and earns a gross salary of €{{Salary}} each month.</p>
+			
+			<div ng-controller="empPaycheck">
+				<p>{{Name}} pays €{{getTaxes()}} in taxes.</p>
+				<p>His net salary each month is {{getNet()}}</p>
+			</div><!-- end empPaycheck -->
+		</div> <!-- end empDetails -->
+	</div> <!-- end emp -->
+	
+</body>
+</html>
