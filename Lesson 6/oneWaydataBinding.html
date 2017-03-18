@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>One-Way Data Binding</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+		<script type="text/javascript" src="oneWay.js"></script>
+	</head>
+
+	<body ng-app="app">
+		<div ng-controller="emp">
+			<div>The value of a is: {{a}}.<br>
+			The value of b is: {{b}}.
+			</div>
+			<hr>
+			<div>The value of a is <span ng-bind="a"></span></div>
+			<div>The value of a is <span ng-bind="b"></span></div>
+
+		</div><!--end emp-->
+	</body>
+</html>
